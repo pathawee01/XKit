@@ -1,5 +1,5 @@
 //* TITLE Pokés **//
-//* VERSION 0.12.0 **//
+//* VERSION 0.13.0 **//
 //* DESCRIPTION Gotta catch them all! **//
 //* DETAILS Randomly spawns Pokémon on your dash for you to collect. **//
 //* DEVELOPER new-xkit **//
@@ -136,10 +136,10 @@ XKit.extensions.pokes = {
 
 			if (XKit.extensions.pokes.preferences.allow_fullwidth.value) {
 				poke_html = '<div class="poke ' + poke_class + shiny_class + '" data-pokeid="' + db_nr + '" data-pokesortid="' + poke_sortid + '" data-pokename="' + poke_name + '" data-pokegender="' + poke_gender + '" style="left:' + xpos + 'px; margin-top:' + ypos + 'px;">' +
-				'<img src="' + poke_sprite + '" alt="' + poke_name + '"/>' + '</div>';
+					'<img src="' + poke_sprite + '" alt="' + poke_name + '"/>' + '</div>';
 			} else {
 				poke_html = '<div class="poke fixed ' + poke_class + shiny_class + '" data-pokeid="' + db_nr + '" data-pokesortid="' + poke_sortid + '" data-pokename="' + poke_name + '" data-pokegender="' + poke_gender + '" style="margin-top:' + ypos + 'px;">' +
-				'<img src="' + poke_sprite + '" alt="' + poke_name + '"/>' + '</div>';
+					'<img src="' + poke_sprite + '" alt="' + poke_name + '"/>' + '</div>';
 			}
 
 			pokedThing.after(poke_html);
@@ -204,7 +204,7 @@ XKit.extensions.pokes = {
 	},
 
 	pokeGen: function() {
-		return Math.floor(Math.random() * 889);
+		return Math.floor(Math.random() * 1018);
 	},
 
 	destroy: function() {
@@ -249,30 +249,30 @@ XKit.extensions.pokes = {
 		var m_html =
 			'<div class="xkit-pokes-lightbox" style="opacity: 0">' +
 			'<div class="xkit-pokes-pc">' +
-					'<div class="xkit-pokes-pc-sorter">' +
-              '<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="chronological" title="Order of capture" checked="checked"></input>' +
-              '<label for="chronological"></label>' +
-              '<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="alphabetical" title="Name"></input>' +
-              '<label for="alphabetical"></label>' +
-              '<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="pokeid" title="Pokédex # ordering"></input>' +
-              '<label for="pokeid"></label>' +
-              '<input type="checkbox" class="xkit-pokes-sorter" id="reverse-toggle"></input>' +
-              '<label for="reverse-toggle"></label>' +
-					'</div>' +
-				'<div class="xkit-pokes-pc-info">' +
-					'<div class="gender"></div>' +
-					'<div class="nickname"></div>' +
-					'<input class="xkit-textbox nickname-textbox" maxlength="32" style="display: none" placeholder="Press Enter after editing">' +
-					'<div class="species"></div>' +
-					'<div class="shiny"></div>' +
-					'<div class="xkit-button release_pokemon" style="display: none" title="Release Pokémon"></div>' +
-					'<div class="caught_stats"></div>' +
-				'</div>' +
-				'<div class="xkit-pokes-pc-pokemon">' +
-					'<div id="xkit-loading_pokemon">' +
-						'Loading Pokémon, please wait...' +
-					'</div>' +
-				'</div>' +
+			'<div class="xkit-pokes-pc-sorter">' +
+			'<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="chronological" title="Order of capture" checked="checked"></input>' +
+			'<label for="chronological"></label>' +
+			'<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="alphabetical" title="Name"></input>' +
+			'<label for="alphabetical"></label>' +
+			'<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="pokeid" title="Pokédex # ordering"></input>' +
+			'<label for="pokeid"></label>' +
+			'<input type="checkbox" class="xkit-pokes-sorter" id="reverse-toggle"></input>' +
+			'<label for="reverse-toggle"></label>' +
+			'</div>' +
+			'<div class="xkit-pokes-pc-info">' +
+			'<div class="gender"></div>' +
+			'<div class="nickname"></div>' +
+			'<input class="xkit-textbox nickname-textbox" maxlength="32" style="display: none" placeholder="Press Enter after editing">' +
+			'<div class="species"></div>' +
+			'<div class="shiny"></div>' +
+			'<div class="xkit-button release_pokemon" style="display: none" title="Release Pokémon"></div>' +
+			'<div class="caught_stats"></div>' +
+			'</div>' +
+			'<div class="xkit-pokes-pc-pokemon">' +
+			'<div id="xkit-loading_pokemon">' +
+			'Loading Pokémon, please wait...' +
+			'</div>' +
+			'</div>' +
 			'</div>';
 
 		$("body").prepend(m_html);
@@ -296,18 +296,18 @@ XKit.extensions.pokes = {
 
 		$('input:radio[name="xkit-pokes-sort"]#pokeid').change(function(e) {
 			$("#xkit-loading_pokemon div.caught").sort(sortFunction("pokesortid", "pokesortid"))
-									.prependTo("#xkit-loading_pokemon");
+				.prependTo("#xkit-loading_pokemon");
 		});
 		$('input:radio[name="xkit-pokes-sort"]#alphabetical').change(function(e) {
 			$("#xkit-loading_pokemon div.caught").sort(sortFunction("pokenick", "pokespecies"))
-									.prependTo("#xkit-loading_pokemon");
+				.prependTo("#xkit-loading_pokemon");
 		});
 		$('input:radio[name="xkit-pokes-sort"]#chronological').change(function(e) {
 			$("#xkit-loading_pokemon div.caught").sort(sortFunction('array_index', 'array_index'))
-									.prependTo("#xkit-loading_pokemon");
+				.prependTo("#xkit-loading_pokemon");
 		});
 		$('.xkit-pokes-sorter#reverse-toggle').change(function(e) {
-				 $("#xkit-loading_pokemon div.caught").sort(function(i) {return 1;}).prependTo("#xkit-loading_pokemon");
+			$("#xkit-loading_pokemon div.caught").sort(function(i) { return 1; }).prependTo("#xkit-loading_pokemon");
 		});
 
 		$(".xkit-pokes-lightbox").animate({
@@ -400,8 +400,8 @@ XKit.extensions.pokes = {
 					$(".xkit-pokes-pc-info .release_pokemon").show();
 					$(".xkit-pokes-pc-info .nickname-textbox").hide();
 					$(".xkit-pokes-pc-info .nickname-textbox").val($(this).attr("data-pokenick"));
-					$(".xkit-pokes-pc-info .gender").attr(  "data-pokegender", ( $(this).attr("data-pokegender") ) );
-					$(".xkit-pokes-pc-info .gender").text( $(this).attr("data-pokegender") );
+					$(".xkit-pokes-pc-info .gender").attr("data-pokegender", ($(this).attr("data-pokegender")));
+					$(".xkit-pokes-pc-info .gender").text($(this).attr("data-pokegender"));
 					$(".xkit-pokes-pc-info .species").text("Species: " + $(this).attr("data-pokespecies"));
 					$(".xkit-pokes-pc-info .shiny").text($(this).hasClass("pokes_shiny") ? "Shiny" : "");
 					if (typeof $(this).attr("data-pokenick") !== "undefined" && $(this).attr("data-pokenick")) {
@@ -419,21 +419,21 @@ XKit.extensions.pokes = {
 	cpanel: function(m_div) {
 		var m_html = '<div id="xkit-pokes-menu">' +
 			'<div class="xkit-pokes-menu_button" id="xkit-pokes-show_poke_list">' +
-				'<div class="icon"></div>' +
-				'<div class="title">Pokémon</div>' +
-				'<div class="description">Check which Pokémon you have caught</div>' +
+			'<div class="icon"></div>' +
+			'<div class="title">Pokémon</div>' +
+			'<div class="description">Check which Pokémon you have caught</div>' +
 			'</div>' +
 			'<div class="xkit-pokes-menu_button disabled">' +
-				'<div class="icon"></div>' +
-				'<div class="title"></div>' +
-				'<div class="description"></div>' +
+			'<div class="icon"></div>' +
+			'<div class="title"></div>' +
+			'<div class="description"></div>' +
 			'</div>' +
 			'<div class="xkit-pokes-menu_button disabled">' +
-				'<div class="icon"></div>' +
-				'<div class="title"></div>' +
-				'<div class="description"></div>' +
+			'<div class="icon"></div>' +
+			'<div class="title"></div>' +
+			'<div class="description"></div>' +
 			'</div>' +
-		'</div>';
+			'</div>';
 		m_div.append(m_html);
 
 		$("#xkit-pokes-show_poke_list").click(function() {
