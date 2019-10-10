@@ -249,30 +249,30 @@ XKit.extensions.pokes = {
 		var m_html =
 			'<div class="xkit-pokes-lightbox" style="opacity: 0">' +
 			'<div class="xkit-pokes-pc">' +
-			'<div class="xkit-pokes-pc-sorter">' +
-			'<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="chronological" title="Order of capture" checked="checked"></input>' +
-			'<label for="chronological"></label>' +
-			'<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="alphabetical" title="Name"></input>' +
-			'<label for="alphabetical"></label>' +
-			'<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="pokeid" title="Pokédex # ordering"></input>' +
-			'<label for="pokeid"></label>' +
-			'<input type="checkbox" class="xkit-pokes-sorter" id="reverse-toggle"></input>' +
-			'<label for="reverse-toggle"></label>' +
-			'</div>' +
-			'<div class="xkit-pokes-pc-info">' +
-			'<div class="gender"></div>' +
-			'<div class="nickname"></div>' +
-			'<input class="xkit-textbox nickname-textbox" maxlength="32" style="display: none" placeholder="Press Enter after editing">' +
-			'<div class="species"></div>' +
-			'<div class="shiny"></div>' +
-			'<div class="xkit-button release_pokemon" style="display: none" title="Release Pokémon"></div>' +
-			'<div class="caught_stats"></div>' +
-			'</div>' +
-			'<div class="xkit-pokes-pc-pokemon">' +
-			'<div id="xkit-loading_pokemon">' +
-			'Loading Pokémon, please wait...' +
-			'</div>' +
-			'</div>' +
+					'<div class="xkit-pokes-pc-sorter">' +
+              '<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="chronological" title="Order of capture" checked="checked"></input>' +
+              '<label for="chronological"></label>' +
+              '<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="alphabetical" title="Name"></input>' +
+              '<label for="alphabetical"></label>' +
+              '<input type="radio" name="xkit-pokes-sort" class="xkit-pokes-sorter" id="pokeid" title="Pokédex # ordering"></input>' +
+              '<label for="pokeid"></label>' +
+              '<input type="checkbox" class="xkit-pokes-sorter" id="reverse-toggle"></input>' +
+              '<label for="reverse-toggle"></label>' +
+					'</div>' +
+				'<div class="xkit-pokes-pc-info">' +
+					'<div class="gender"></div>' +
+					'<div class="nickname"></div>' +
+					'<input class="xkit-textbox nickname-textbox" maxlength="32" style="display: none" placeholder="Press Enter after editing">' +
+					'<div class="species"></div>' +
+					'<div class="shiny"></div>' +
+					'<div class="xkit-button release_pokemon" style="display: none" title="Release Pokémon"></div>' +
+					'<div class="caught_stats"></div>' +
+				'</div>' +
+				'<div class="xkit-pokes-pc-pokemon">' +
+					'<div id="xkit-loading_pokemon">' +
+						'Loading Pokémon, please wait...' +
+					'</div>' +
+				'</div>' +
 			'</div>';
 
 		$("body").prepend(m_html);
